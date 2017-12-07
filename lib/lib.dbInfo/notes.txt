@@ -1,0 +1,194 @@
+﻿ /*
+   // features
+    // root table
+    // descriptive
+    // numerical
+    // ordered by date -- do records have dates that are in order
+    // lookup
+    // employees, product, 
+    // number of numeric values (excluding id's) in comparison to text fields
+    // number of date fields, number of id fields
+
+ * 
+ * require
+person (customer, )
+client, buyer, user (customer,)
+attribute?
+name
+identify?
+require (limit, )
+amount
+range
+area (country, state, city)
+territory (country, state)
+location (city)
+system (code, scale, status)
+
+relation (contact,)
+relationship (contact,)
+connection (contact,)
+
+time (dates)
+
+retailer (store)
+faciity (store)
+business(store)
+company (store)
+
+character (actor,text)
+story (description,text)
+reference (description,text)
+information (description)
+definition (description)
+describe (description)
+acount (description)
+type (description)
+statement (dsecription, text)
+number (amount,scale,quantity,number)
+availability (quantity)
+section (category)
+classification (category)
+compensation (payment, salary)
+sequence (number,)
+quantity
+asset
+item
+list (category,id)
+proportion (quantity,amount)
+variety (quantity,number)
+supply (quantity,stock)
+inventory (stock, property)
+property (stock,inventory)
+amount (number,price,length)
+value (number,price,quantity,satus,rate)
+range (number,)
+leve, (number,quantity,status)
+sequence (number)
+group, (bumber,category)
+equipment (stock,buy,price)
+user (username)
+name (username)
+
+person
+client
+buyer
+user
+
+market (stock,product)
+manufacturer (product,vendor)
+production (product, )
+material (product, )
+commodity ( product, stock)
+item (product, )
+provider (vendor)
+product (product,stock)
+brand (product)
+rating (score)
+employee (staff)
+worker
+personnel
+
+modify (update,)
+
+compensation**
+benefit
+cost
+purchase (buy, price, payment )
+price (buy,payment,cost )
+money (buy, price, payment)
+**pay, 
+rate (price,
+cost (price))
+ * 
+
+ 
+    // select *  FROM INFORMATION_SCHEMA.REFERENTIAL_CONSTRAINTS
+    // from INFORMATION_SCHEMA.REFERENTIAL_CONSTRAINTS note unique constraint, Update rule, and delete rule
+    /*
+     * information_schema.ROUTINES has stored procs and functions
+        INFORMATION_SCHEMA PARAMETERS Table
+
+    The PARAMETERS table provides information about stored procedure and function parameters, and about return values for stored functions.Parameter information is similar to the contents of the param_list column in the mysql.proc table.
+    */
+
+    
+
+// triggers
+    //
+
+    // if a column is part of an index
+    // it's position in the index is useful
+    // cardinality is the number of unique values
+
+    // information_schema tables has:
+    // avg_row_length
+    // you can get a metric of variablity by comparing avg_row_length to data_length / 
+    // index_length
+    // table_rows
+
+    // information_schema.table_constraints
+    //   constraint_type, table_name, constraint_name
+    // triggers
+
+    // grouping
+    // single primary key of table
+    // is it part of an index
+    // is it part of a unique key
+    // is it part of a primary key
+    // id field pointing to a parent table
+    // useful for ordering
+    // distinct values -- good for grouping
+    // number of unique values
+    // factor of distinct values
+    // are all values distinct or are there mostly matching values
+    // date range 
+    // number range
+    // accepts nulls
+    // has blank values scored by number of blanks compared to total
+    // string length variability
+    // do the value sort match the order of the primary key
+    // do the values have a pattern with reference to date fields
+
+    // these features can be figured out when limited by query 
+
+    /*
+     WITH freqCTE AS
+(
+SELECT v.actor_id,
+COUNT(v.actor_id) AS AbsFreq,
+CAST(ROUND(100. * (COUNT(v.actor_id)) /
+   (SELECT COUNT(*) FROM film_actor), 0) AS INT) AS AbsPerc
+FROM film_actor AS v
+GROUP BY v.actor_id
+)
+SELECT c1.actor_id AS NCars,
+c1.AbsFreq,
+(SELECT SUM(c2.AbsFreq)
+FROM freqCTE AS c2
+WHERE c2.actor_id <= c1.actor_id) AS CumFreq,
+c1.AbsPerc,
+(SELECT SUM(c2.AbsPerc)
+FROM freqCTE AS c2
+WHERE c2.actor_id <= c1.actor_id) AS CumPerc,
+CAST(repeat('*',c1.AbsPerc) AS char) AS Histogram
+FROM freqCTE AS c1
+ORDER BY c1.actor_id;
+
+        // table
+        public int descriptive { get { return 0; } }
+        public int numbery { get { return 0; } }
+        public int timey { get { return 0; } }
+        public int lookupish { get { return 0; } }
+
+        public int groupy { get { return 0; } }   // dis
+        public int ordy { get { return 0; } }     
+        public int keylike { get { return 0; } }  // values are sequential integers
+        public int discrety { get { return 0; } } // are the values distinct
+        public int continuy { get { return 0; } } // even distribution
+        // public int cardinallity;
+     */
+
+    // if it's indexed, even on a non-primary key, it makes the column inportant
+    // even distribution 
+    // Cardinality(SQL statements) In SQL(Structured Query Language), the term cardinality refers to the uniqueness of data values contained in a particular column(attribute) of a database table.The lower the cardinality, the more duplicated elements in a column.
+    // https://academy.vertabelo.com/blog/high-performance-statistical-queries-sql-part-1-calculating-frequencies-histograms/

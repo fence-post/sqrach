@@ -1,0 +1,368 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{03C0D563-5454-4568-A951-EB39B323F307}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>fp.sqratch</RootNamespace>
+    <AssemblyName>sqratch</AssemblyName>
+    <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>
+    </ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.Msagl">
+      <HintPath>..\..\lib\assemblies\Microsoft.Msagl.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Msagl.Drawing">
+      <HintPath>..\..\lib\assemblies\Microsoft.Msagl.Drawing.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Msagl.GraphViewerGdi">
+      <HintPath>..\..\lib\assemblies\Microsoft.Msagl.GraphViewerGdi.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.SqlServer.Types, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.SqlServer.Types.14.0.314.76\lib\net40\Microsoft.SqlServer.Types.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="MySql.Data">
+      <HintPath>..\..\lib\lib\bin\Debug\MySql.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="MySql.Data.Entity">
+      <HintPath>..\..\lib\lib\bin\Debug\MySql.Data.Entity.dll</HintPath>
+    </Reference>
+    <Reference Include="ScintillaNET">
+      <HintPath>..\..\lib\assemblies\ScintillaNET.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Data.Entity.Design" />
+    <Reference Include="System.Data.SQLite, Version=1.0.105.2, Culture=neutral, PublicKeyToken=db937bc2d44ff139, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\lib\lib\System.Data.SQLite.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AutoSuggest.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="AutoSuggest.Designer.cs">
+      <DependentUpon>AutoSuggest.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ClipboardHelper.cs" />
+    <Compile Include="LayoutGraph.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LayoutGraphTable.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LayoutGraphTable.Designer.cs">
+      <DependentUpon>LayoutGraphTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="QueryColumnInfo.cs" />
+    <Compile Include="DarkListView.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="DlgSaveAsSave.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DlgSaveAsSave.Designer.cs">
+      <DependentUpon>DlgSaveAsSave.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Extensions.cs" />
+    <Compile Include="main.actions.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Query.cs" />
+    <Compile Include="DlgAbout.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DlgAbout.Designer.cs">
+      <DependentUpon>DlgAbout.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DlgColors.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DlgColors.Designer.cs">
+      <DependentUpon>DlgColors.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DlgLoadData.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DlgLoadData.Designer.cs">
+      <DependentUpon>DlgLoadData.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DlgSaveAs.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DlgSaveAs.Designer.cs">
+      <DependentUpon>DlgSaveAs.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EditorHeader.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="EditorHeader.Designer.cs">
+      <DependentUpon>EditorHeader.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Loading.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Loading.Designer.cs">
+      <DependentUpon>Loading.cs</DependentUpon>
+    </Compile>
+    <Compile Include="main.background.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="main.objecttrees.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DlgNewQuery.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DlgNewQuery.Designer.cs">
+      <DependentUpon>DlgNewQuery.cs</DependentUpon>
+    </Compile>
+    <Compile Include="main.results.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EditorHeaderDropdown.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ObjectsTree.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ObjectsTreeView.cs" />
+    <Compile Include="ParseTreeView.cs" />
+    <Compile Include="QueryListView.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="QuerySuggestions.cs" />
+    <Compile Include="RenderResults.cs" />
+    <Compile Include="ResultsListView.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="SqlServerTypes\Loader.cs" />
+    <Compile Include="sqratch.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>sqratch.resx</DependentUpon>
+    </Compile>
+    <Compile Include="UI.cs" />
+    <Compile Include="DlgConnection.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DlgConnection.Designer.cs">
+      <DependentUpon>DlgConnection.cs</DependentUpon>
+    </Compile>
+    <Compile Include="main.commands.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="main.editor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="main.ui.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Options.cs" />
+    <Compile Include="DlgOptions.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DlgOptions.Designer.cs">
+      <DependentUpon>DlgOptions.cs</DependentUpon>
+    </Compile>
+    <Compile Include="main.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="main.Designer.cs">
+      <DependentUpon>main.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LayoutGraphParse.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LayoutGraphParse.Designer.cs">
+      <DependentUpon>LayoutGraphParse.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Parser.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="App.cs" />
+    <Compile Include="Background.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Settings.cs" />
+    <Compile Include="DlgTabName.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DlgTabName.Designer.cs">
+      <DependentUpon>DlgTabName.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="AutoSuggest.resx">
+      <DependentUpon>AutoSuggest.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DlgAbout.resx">
+      <DependentUpon>DlgAbout.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DlgColors.resx">
+      <DependentUpon>DlgColors.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DlgConnection.resx">
+      <DependentUpon>DlgConnection.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DlgLoadData.resx">
+      <DependentUpon>DlgLoadData.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DlgNewQuery.resx">
+      <DependentUpon>DlgNewQuery.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DlgOptions.resx">
+      <DependentUpon>DlgOptions.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DlgSaveAs.resx">
+      <DependentUpon>DlgSaveAs.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DlgSaveAsSave.resx">
+      <DependentUpon>DlgSaveAsSave.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EditorHeader.resx">
+      <DependentUpon>EditorHeader.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EditorHeaderDropdown.resx">
+      <DependentUpon>EditorHeaderDropdown.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Loading.resx">
+      <DependentUpon>Loading.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="main.resx">
+      <DependentUpon>main.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ObjectsTreeView.resx">
+      <DependentUpon>ObjectsTreeView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LayoutGraphTable.resx">
+      <DependentUpon>LayoutGraphTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LayoutGraphParse.resx">
+      <DependentUpon>LayoutGraphParse.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="DlgTabName.resx">
+      <DependentUpon>DlgTabName.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="sqratch.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>sqratch.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\lib\lib.dbInfo\lib.dbInfo.csproj">
+      <Project>{14fb6501-cf71-456b-a752-7d24eee4de76}</Project>
+      <Name>lib.dbInfo</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\lib\lib.forms\lib.forms.csproj">
+      <Project>{0a4c666e-902d-4c7a-946b-52bf563e0df6}</Project>
+      <Name>lib.forms</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\lib\lib.mssql\lib.mssql.csproj">
+      <Project>{4137c508-8d99-48ba-b307-4ab5c3c4abd1}</Project>
+      <Name>lib.mssql</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\lib\lib.mysql\lib.mysql.csproj">
+      <Project>{106c50d8-d089-419a-9daf-0b8e9439e0f5}</Project>
+      <Name>lib.mysql</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\lib\lib.sqlite\lib.sqlite.csproj">
+      <Project>{59d7eec1-383c-4e49-a1d7-4079d860645e}</Project>
+      <Name>lib.sqlite</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\lib\lib.sqlparser\lib.sqlparser.csproj">
+      <Project>{0bd694d1-f8c1-4631-8aa9-18aba991311c}</Project>
+      <Name>lib.sqlparser</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\lib\lib\lib.csproj">
+      <Project>{d15bed24-4301-4e1b-a7ee-fbea7fd33aa2}</Project>
+      <Name>lib</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="icon2_Ozw_icon.ico" />
+    <None Include="Resources\sqratchIcon.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="SqlServerTypes\readme.htm" />
+    <Content Include="SqlServerTypes\x64\msvcr120.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x64\SqlServerSpatial140.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x86\msvcr120.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x86\SqlServerSpatial140.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
